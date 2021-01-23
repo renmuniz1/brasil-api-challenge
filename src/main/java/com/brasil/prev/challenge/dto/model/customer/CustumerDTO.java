@@ -15,7 +15,7 @@ public class CustumerDTO implements Serializable{
 	private Long id;
 	
 	@NotEmpty  @NotNull 
-	private String nome;
+	private String name;
 	
 	@NotEmpty  @NotNull 
 	private String cpf;
@@ -25,10 +25,10 @@ public class CustumerDTO implements Serializable{
 	
 	
 	
-	public CustumerDTO(Long id, @NotEmpty String nome, @NotEmpty String cpf, @NotEmpty String address) {
+	public CustumerDTO(Long id, @NotEmpty String name, @NotEmpty String cpf, @NotEmpty String address) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 		this.cpf = cpf;
 		this.address = address;
 	}
@@ -46,12 +46,12 @@ public class CustumerDTO implements Serializable{
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setName(String nome) {
+		this.name = nome;
 	}
 
 	public String getCpf() {
@@ -82,7 +82,7 @@ public class CustumerDTO implements Serializable{
 	}
 	
 	public Customer convertDTOToEntity() {
-		return new Customer(this.id, this.nome, this.cpf, this.address);
+		return new Customer(this.id, this.name, this.cpf, this.address);
 	}
 	
 	

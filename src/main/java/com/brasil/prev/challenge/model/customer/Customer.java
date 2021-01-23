@@ -23,7 +23,7 @@ public class Customer implements Serializable{
 	private Long id;
 	
 	@NotNull
-	private String nome;
+	private String name;
 	
 	@NotNull
 	private String cpf;
@@ -35,10 +35,10 @@ public class Customer implements Serializable{
 		super();
 	}
 
-	public Customer(Long id, String nome, String cpf, String address) {
+	public Customer(Long id, String name, String cpf, String address) {
 		super();
 		this.id = id;
-		this.nome = nome;
+		this.name = name;
 		this.cpf = cpf;
 		this.address = address;
 	}
@@ -51,12 +51,12 @@ public class Customer implements Serializable{
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getName() {
+		return name;
 	}
 
 	public void setNome(String nome) {
-		this.nome = nome;
+		this.name = nome;
 	}
 
 	public String getCpf() {
@@ -87,7 +87,7 @@ public class Customer implements Serializable{
 	}
 	
 	public CustumerDTO convertEntityToDTO() {
-		return new CustumerDTO(this.id, this.nome, this.cpf, this.address);
+		return new CustumerDTO(this.id, this.name, this.cpf, this.address);
 	}
 	
 }
