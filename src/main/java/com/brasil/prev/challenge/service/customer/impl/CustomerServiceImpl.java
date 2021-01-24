@@ -49,4 +49,9 @@ public class CustomerServiceImpl implements CustomerService{
 		return customerRepository.save(customer);
 	}
 
+	@Override
+	public Optional<Customer> findByCpf(String cpf) {
+		return customerRepository.findByCpf(cpf);
+	}
+
 }

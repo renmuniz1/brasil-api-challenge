@@ -75,13 +75,23 @@ public class Customer implements Serializable{
 		this.address = address;
 	}
 
-	public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Customer that = (Customer) o;
-        return Objects.equals(id, that.id);
-    }
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Customer other = (Customer) obj;
+		if (id == null) {
+			if (other.id != null)
+				return false;
+		} else if (!id.equals(other.id))
+			return false;
+		return true;
+	}
+
 	public int hashCode() {
 		return Objects.hash(id);
 	}

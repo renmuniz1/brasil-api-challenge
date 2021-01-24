@@ -18,5 +18,7 @@ public interface CustomerService {
 	void deleteById(Long id);
 	
 	Customer update(Customer customer);
+	
+	Optional<Customer> findByCpf(String cpf);
 
 }
